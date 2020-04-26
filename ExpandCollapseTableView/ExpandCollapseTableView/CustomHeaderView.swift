@@ -27,11 +27,11 @@ class CustomHeaderView: UITableViewHeaderFooterView {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(CustomHeaderView.tableViewSectionTapped(_:)))
         self.addGestureRecognizer(gesture)
         let backgroundView = UIView(frame: self.bounds)
-        backgroundView.backgroundColor = UIColor.red
+        backgroundView.backgroundColor = UIColor.systemBlue
         self.backgroundView = backgroundView
     }
 
-    func tableViewSectionTapped(_ gesture: UIGestureRecognizer) {
+    @objc func tableViewSectionTapped(_ gesture: UIGestureRecognizer) {
         delegate?.headerViewTap(self.sectionNumber)
     }
 }

@@ -45,7 +45,7 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let item = self.currentList[indexPath.section].isExpand
         if item == true {
-            return UITableViewAutomaticDimension
+            return UITableView.automaticDimension
         }
         return 0
     }
@@ -53,14 +53,14 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         let item = self.currentList[indexPath.section].isExpand
         if item == true {
-            return UITableViewAutomaticDimension
+            return UITableView.automaticDimension
         }
         return 0
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
        
-        return 44.0
+        return 75.0
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -88,7 +88,7 @@ extension ViewController: CustomeHeaderViewDelegate {
         })
         self.currentList = output
         self.tableView.beginUpdates()
-        self.tableView.reloadSections(IndexSet(integer: section), with: UITableViewRowAnimation.automatic)
+        self.tableView.reloadSections(IndexSet(integer: section), with: UITableView.RowAnimation.automatic)
         self.tableView.endUpdates()
     }
 }
